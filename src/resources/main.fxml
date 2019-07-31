@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+  xmlns:fx="http://javafx.com/fxml"
+  fx:controller="edu.cnm.deepdive.langton.controller.MainController"
+  stylesheets="@styles.css">
+
+  <columnConstraints>
+    <ColumnConstraints
+    percentWidth="33.3"/>
+    <ColumnConstraints
+    percentWidth="33.3"/>
+  </columnConstraints>
+
+<!-- TODO include element for custom view-->
+
+  <Slider
+    fx:id="populationSize"
+    min="1"
+    max="12"
+    majorTickUnit="1"
+    minorTickCount="0"
+    snapToTicks="true"
+    showTickMarks="true"
+    showTickLabels="false"
+    blockIncrement="1"
+    GridPane.rowIndex="1"
+    GridPane.columnIndex="0"
+    GridPane.halignment="CENTER"
+    GridPane.valignment="CENTER"
+    value="1"/>
+
+  <ToggleButton
+    fx:id="runToggle"
+    GridPane.rowIndex="1"
+    GridPane.columnIndex="1"
+    text="%start_text"
+    GridPane.halignment="CENTER"
+    GridPane.valignment="CENTER"
+    onAction="#toggleRun"/>
+
+
+
+</GridPane>
