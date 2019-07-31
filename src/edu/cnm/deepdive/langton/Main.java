@@ -38,7 +38,7 @@ public class Main extends Application {
 
   @Override
   public void stop() throws Exception {
-    //TODO Stop any controllers.
+    controller.stop();
     super.stop();
   }
 }

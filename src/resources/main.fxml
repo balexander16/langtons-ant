@@ -5,6 +5,7 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import edu.cnm.deepdive.langton.view.TerrainView?>
 
 <GridPane xmlns="http://javafx.com/javafx"
   xmlns:fx="http://javafx.com/fxml"
@@ -18,7 +19,17 @@
     percentWidth="33.3"/>
   </columnConstraints>
 
-<!-- TODO include element for custom view-->
+
+  <TerrainView
+    fx:id="terrainView"
+    GridPane.rowIndex="0"
+    GridPane.columnIndex="0"
+    GridPane.columnSpan="3"
+    GridPane.halignment="CENTER"
+    GridPane.valignment="CENTER"
+    width="600"
+    height="600"
+    />
 
   <Slider
     fx:id="populationSize"
