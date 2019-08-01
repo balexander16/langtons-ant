@@ -56,6 +56,23 @@
     GridPane.valignment="CENTER"
     onAction="#toggleRun"/>
 
+  <Slider
+    fx:id="speed"
+    min="1"
+    max="10"
+    majorTickUnit="1"
+    minorTickCount="0"
+    snapToTicks="true"
+    showTickMarks="true"
+    showTickLabels="true"
+    blockIncrement="1"
+    GridPane.rowIndex="1"
+    GridPane.columnIndex="2"
+    GridPane.halignment="CENTER"
+    GridPane.valignment="CENTER"
+    value="1"/>
+
+
 
 
 </GridPane>

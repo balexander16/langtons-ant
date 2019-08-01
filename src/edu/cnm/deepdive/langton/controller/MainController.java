@@ -7,11 +7,14 @@ import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.control.ToggleButton;
 
 public class MainController {
 
+  @FXML
+  private Slider speed;
   @FXML
   private TerrainView terrainView;
   @FXML
@@ -25,7 +28,7 @@ public class MainController {
 
   @FXML
   private void initialize() {
-    terrain = new Terrain(6, new Random());
+    terrain = new Terrain(2, new Random());
     timer = new AnimationTimer() {
       @Override
       public void handle(long now) {
@@ -56,15 +59,18 @@ public class MainController {
 
   }
 
+
   private class Runner extends Thread {
 
     @Override
     public void run() {
       while (running) {
-        terrain.tick();
+        for (int i = 0; i <= speed.getValue(); i ++) {        // I like the effect utilizing the speed slider here best so far
+          terrain.tick();
+        }
         try {
-          Thread.sleep(1);
-        } catch (InterruptedException e) {
+          Thread.sleep((10 - (long)speed.getValue()) + 1);    // tried a few different things. I like this. so starts at 10 goes down to 1
+        } catch (InterruptedException e) {                          // this is decent... not too fast at 10 and not too slow at 1.
           // Do nothing! Duh.
         }
       }
